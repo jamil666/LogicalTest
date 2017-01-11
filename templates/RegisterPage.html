@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Registration Page</title>
+
+    {% load static %}}
+
+
+<link href="{% static "css/Безымянный1.css" %}" rel="stylesheet" type="text/css" media="all">
+
+<link href="{% static "css/register.css" %}" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<body>
+<div id="wb_Top_Box" style="position:absolute;left:2px;top:0px;width:1262px;height:84px;z-index:0;">
+
+    <img src="{% static "images/img0003.png" %}" id="Top_Box" alt="" style="width:1262px;height:84px;"></div>
+
+<div id="wb_text" style="position:absolute;left:499px;top:30px;width:290px;height:24px;z-index:1;text-align:left;">
+    <span style="color:#F5FFFA;font-family:Arial;font-size:20px;"><strong>Please create new account.</strong></span></div>
+
+<form action="RegisterPage.html" method="post">
+
+    {% csrf_token %}
+
+    <div align="center">
+        </br></br></br></br></br></br></br></br>
+        {{ Message }}
+    </div>
+
+
+    <input type="text" id="First_Name" style="position:absolute;left:605px;top:241px;width:195px;height:20px;line-height:20px;z-index:2;" name="FirstName" value="">
+
+    <input type="text" id="Last_Name" style="position:absolute;left:605px;top:311px;width:195px;height:20px;line-height:20px;z-index:3;" name="LastName" value="">
+
+    <input type="text" id="Login" style="position:absolute;left:605px;top:386px;width:195px;height:20px;line-height:20px;z-index:4;" name="Login" value="">
+
+    <input type="password" id="Password" style="position:absolute;left:605px;top:458px;width:195px;height:20px;line-height:20px;z-index:5;" name="Password" value="">
+
+    <div id="wb_FirstName_Label" style="position:absolute;left:457px;top:245px;width:104px;height:22px;z-index:6;text-align:left;">
+
+        <span style="color:#000000;font-family:Arial;font-size:19px;">First Name</span></div>
+
+    <div id="wb_LastName_label" style="position:absolute;left:457px;top:315px;width:105px;height:23px;z-index:7;text-align:left;">
+
+        <span style="color:#000000;font-family:Arial;font-size:20px;">Last Name</span></div>
+
+    <div id="wb_Login_Label" style="position:absolute;left:457px;top:390px;width:58px;height:23px;z-index:8;text-align:left;">
+
+        <span style="color:#000000;font-family:Arial;font-size:20px;">Login</span></div>
+
+    <div id="wb_Password_Label" style="position:absolute;left:457px;top:462px;width:97px;height:23px;z-index:9;text-align:left;">
+
+        <span style="color:#000000;font-family:Arial;font-size:20px;">Password</span></div>
+
+    <input type="submit" id="Register_Button" name="Register" value="Register" style="position:absolute;left:456px;top:549px;width:149px;height:32px;z-index:10;">
+
+
+
+</form>
+
+<form action="LoginPage.html" method="post">
+
+    {% csrf_token %}
+
+    <input type="submit" id="LoginPage_Button" name="" value="Login Page" style="position:absolute;left:664px;top:549px;width:146px;height:32px;z-index:11;">
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Questions Page</title>
+
+    {% load static %}}
+
+
+<link href="{% static "css/Безымянный1.css" %}" rel="stylesheet" type="text/css" media="all">
+
+<link href="{% static "css/questions.css" %}" rel="stylesheet" type="text/css" media="all">
+
+
+</head>
+<body>
+
+<div id="wb_Top_Box" style="position:absolute;left:2px;top:0px;width:1262px;height:84px;z-index:0;">
+<img src={% static "images/img0002.png" %} id="Top_Box" alt="" style="width:1275px;height:84px;"></div>
+
+<div id="wb_text" style="position:absolute;left:479px;top:30px;width:308px;height:24px;z-index:1;text-align:left;">
+<span style="color:#F5FFFA;font-family:Arial;font-size:20px;"><strong>Please answer to all questions.</strong></span></div>
+
+<form action="QuestionsPage.html" method="post">
+
+    {% csrf_token %}
+
+    <ul>
+        </br></br></br></br></br></br>
+
+        <strong>{{ Question1 }}</strong> </br></br>
+        <input type="radio" value="Скопление звезд" name="Q1" > Скопление звезд </input>
+        <input type="radio" value="Парад планет" name="Q1"> Парад планет </input>
+        <input type="radio" value="Галактика" name="Q1"> Галактика </input>
+        <input type="radio" value="Солнечная система" name="Q1"> Солнечная система </input>
+
+        </br></br>
+
+        <strong>{{ Question2 }}</strong> </br></br>
+        <input type="radio" value="Через перешеек в Беринговом проливе" name="Q2"> Через перешеек в Беринговом проливе </input>
+        <input type="radio" value="По льду из Чукотки на Аляску" name="Q2"> По льду из Чукотки на Аляску </input>
+        <input type="radio" value="Но новому Евро-Американскому мосту" name="Q2"> Но новому Евро-Американскому мосту </input>
+        <input type="radio" value="Никак" name="Q2"> Никак </input>
+
+        </br></br>
+
+
+        <strong>{{ Question3 }}</strong> </br></br>
+        <input type="radio" value="Бактерия" name="Q3">Бактерия </input>
+        <input type="radio" value="Вирус" name="Q3"> Вирус </input>
+        <input type="radio" value="Простейший, одноклеточный организм" name="Q3"> Простейший, одноклеточный организм </input>
+        <input type="radio" value="Микроб" name="Q3"> Микроб </input>
+
+        </br></br>
+
+        <strong>{{ Question4 }}</strong> </br></br>
+        <input type="radio" value="1-й" name="Q4">1-й </input>
+        <input type="radio" value="2-й" name="Q4"> 2-й </input>
+        <input type="radio" value="3-й" name="Q4"> 3-й </input>
+        <input type="radio" value="4-й" name="Q4"> 4-й </input>
+
+        </br></br>
+
+        <strong>{{ Question5 }}</strong> </br></br>
+        <input type="radio" value="Левай Страусс" name="Q5">Левай Страусс </input>
+        <input type="radio" value="Пьер Карден" name="Q5"> Пьер Карден </input>
+        <input type="radio" value="Джанни Версачи" name="Q5"> Джанни Версачи </input>
+        <input type="radio" value="Дольче Габбана" name="Q5"> Дольче Габбана </input>
+
+        </br></br>
+
+
+        <strong>{{ Question6 }}</strong> </br></br>
+        <input type="radio" value="Сталкер" name="Q6">Сталкер </input>
+        <input type="radio" value="Батальоны просят огня" name="Q6"> Батальоны просят огня </input>
+        <input type="radio" value="Москва слезам не верит" name="Q6"> Москва слезам не верит </input>
+        <input type="radio" value="Солярис" name="Q6"> Солярис </input>
+
+        </br></br>
+
+
+        <strong>{{ Question7 }}</strong> </br></br>
+        <input type="radio" value="Достоевский - роман 'Идиот'" name="Q7">Достоевский - роман "Идиот" </input>
+        <input type="radio" value="Грибоедов - 'Горе от ума'" name="Q7"> Грибоедов - "Горе от ума" </input>
+        <input type="radio" value="Гончаров - 'Обломов'" name="Q7"> Гончаров - "Обломов" </input>
+        <input type="radio" value="Толстой - 'Война и мир'" name="Q7"> Толстой - "Война и мир" </input>
+
+        </br></br>
+
+
+        <strong>{{ Question8 }}</strong> </br></br>
+        <input type="radio" value="Бах" name="Q8"> Бах </input>
+        <input type="radio" value="Бетховен" name="Q8"> Бетховен </input>
+        <input type="radio" value="Шопен" name="Q8"> Шопен </input>
+        <input type="radio" value="Лист" name="Q8"> Лист </input>
+
+        </br></br>
+
+
+        <strong>{{ Question9 }}</strong> </br></br>
+        <input type="radio" value="Рокфеллеру" name="Q9">Рокфеллеру </input>
+        <input type="radio" value="Франклину" name="Q9"> Франклину </input>
+        <input type="radio" value="Корнеги" name="Q9"> Корнеги </input>
+        <input type="radio" value="Соросу" name="Q9"> Соросу </input>
+
+        </br></br>
+
+        <strong>{{ Question10 }}</strong> </br></br>
+        <input type="radio" value="Стив Джобс" name="Q10">Стив Джобс </input>
+        <input type="radio" value="Конрад Цузе" name="Q10"> Конрад Цузе </input>
+        <input type="radio" value="Алан Тьюринг" name="Q10"> Алан Тьюринг </input>
+        <input type="radio" value="Чарльз Бэббидж" name="Q10"> Чарльз Бэббидж </input>
+
+        </br></br>
+
+    </ul>
+
+    <input type="submit" id="Finish_Button" name="Finish" value="Finish" style="position:absolute;left:1049px;top:770px;width:140px;height:36px;z-index:2;">
+
+</form>
+
+</body>
+</html>

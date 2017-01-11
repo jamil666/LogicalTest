@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Result Page</title>
+
+    {% load static %}}
+
+<link href="{% static "css/Безымянный1.css" %}" rel="stylesheet" type="text/css" media="all">
+
+<link href="{% static "css/result.css" %}" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<body>
+<div id="wb_Top_Box" style="position:absolute;left:2px;top:0px;width:1262px;height:84px;z-index:0;">
+<img src={% static "images/img0004.png" %} id="Top_Box" alt="" style="width:1275px;height:84px;"></div>
+<div id="wb_text" style="position:absolute;left:561px;top:30px;width:128px;height:24px;z-index:1;text-align:left;">
+
+<span style="color:#F5FFFA;font-family:Arial;font-size:20px;"><strong>Scores Page</strong></span></div>
+
+</br></br></br></br></br></br></br></br></br></br>
+
+{% if TotalScores > 70  %}
+    <div align="center" style="font-size: xx-large; color: #3370B7 " >
+    Congratulations {{ login }}! You passed exam!</br>
+    Your result is: {{ TotalScores }}
+
+    </br></br>
+
+    <img src={% static "images/exam-passed.jpg" %} id="Exam-Passed" alt="" >
+
+    </div>
+
+{% endif %}
+
+
+{% if TotalScores <= 70  %}
+    <div align="center" style="font-size: xx-large; color: #3370B7" >
+    Sorry {{ login }}! You are not passed exam! </br>
+    Your result is: {{ TotalScores }}
+
+    </br></br>
+
+    <img src={% static "images/fail-exam.jpg" %} id="Exam-Failed" alt="" >
+    </div>
+
+{% endif %}
+
+</br></br></br></br>
+
+
+<form action="QuestionsPage.html" >
+
+    <div align="center">
+
+    <input type="submit" id="Back_Button" name="Back_Button" value="Back to Questions">
+
+    </div>
+</form>
+
+</body>
+</html>

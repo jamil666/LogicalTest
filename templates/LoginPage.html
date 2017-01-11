@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login Page</title>
+
+    {% load static %}}
+
+<link href="{% static "css/Безымянный1.css" %}" rel="stylesheet" type="text/css" media="all">
+
+<link href="{% static "css/index.css" %}" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<body>
+<div id="wb_WelcomeBox" style="position:absolute;left:0px;top:0px;width:1262px;height:84px;z-index:0;">
+<img src={% static "images/img0001.png" %} id="WelcomeBox" alt="" style="width:1280px;height:84px;"></div>
+
+<div id="wb_Welcome_text" style="position:absolute;left:480px;top:30px;width:290px;height:24px;z-index:1;text-align:left;">
+<span style="color:#F5FFFA;font-family:Arial;font-size:20px;"><strong>Welcome to Logical Test Page</strong></span></div>
+
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+
+<form action="LoginPage.html" method="post" >
+    <div align="center">
+
+    {% csrf_token %}
+
+    <input type="text" id="Login" style=
+            "position:absolute;
+            left:582px;
+            top:341px;
+            width:207px;
+            height:18px;
+            line-height:18px;
+            z-index:2;
+            " name="Login" value="">
+
+    <input type="password" id="Password" style=
+            "position:absolute;
+            left:582px;
+            top:431px;
+            width:207px;
+            height:18px;
+            line-height:18px;
+            z-index:3;
+            " name="Password" value="">
+
+<div id="wb_Login_Lable" style="position:absolute;left:452px;top:344px;width:59px;height:23px;z-index:4;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:20px;">Login</span></div>
+<div id="wb_Password_Lable" style="position:absolute;left:452px;top:434px;width:94px;height:23px;z-index:5;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:20px;">Password</span></div>
+
+        </br></br>
+    <input type="submit" id="Logon_Button" name="Logon" value="Logon" style="position:absolute;left:452px;top:507px;width:346px;height:43px;z-index:6;">
+
+        <strong> {{ error }} </strong>
+
+    </div>
+</form>
+
+<form action="QuestionsPage.html">
+    {% csrf_token %}
+
+
+</form>
+
+<div id="wb_New_Account_Link" style="position:absolute;left:546px;top:609px;width:346px;height:18px;z-index:7;text-align:left;">
+<span style="color:#000000;font-family:Arial;font-size:16px;"><a href="RegisterPage.html">Register new account</a></span></div>
+</body>
+</html>
