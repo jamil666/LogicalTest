@@ -2,8 +2,7 @@
 from django.shortcuts import render, redirect
 from .models import User, Question
 
-# Create your views here.
-ALL_Questions = Question.objects.all()
+ALL_Questions = Question.objects.all()  # Get all questions from database
 
 Question1 = ALL_Questions.get(id=1)
 Question2 = ALL_Questions.get(id=2)
@@ -16,7 +15,7 @@ Question8 = ALL_Questions.get(id=8)
 Question9 = ALL_Questions.get(id=9)
 Question10 = ALL_Questions.get(id=10)
 
-context = {
+context = {                             # Add questions to context
     "questions": ALL_Questions,
     "Question1": Question1,
     "Question2": Question2,
@@ -32,18 +31,18 @@ context = {
 
 def LoginPage(request):
 
-    UserDB = User.objects.all()
+    UserDB = User.objects.all()     # Get users from database
 
     global login
-    login = request.POST.get("Login")
-    password = request.POST.get("Password")
+    login = request.POST.get("Login")           # Get login provided by user
+    password = request.POST.get("Password")     # Get password provided by user
 
     if request.method == 'POST':
-        FindLogin = UserDB.filter(Login=login)
+        FindLogin = UserDB.filter(Login=login)  # Search provided login in database
 
         if FindLogin == FindLogin:
 
-            for entry in FindLogin:
+            for entry in FindLogin:             # If user founded, redirect to questions page
                 if entry.Password == password:
 
                     context["login"] = login
@@ -52,19 +51,21 @@ def LoginPage(request):
 
                 else:
 
-                    context["error"] = "Password incorrect. Please try again."
+                    context["error"] = "Password incorrect. Please try again."  # Check is password is correct
                     return render(request, 'LoginPage.html', context)
             else:
 
-                context["error"] = "Login incorrect. Please try again."
+                context["error"] = "Login incorrect. Please try again."         # Check is login is correct
                 return render(request, 'LoginPage.html', context)
 
-    return render(request, 'LoginPage.html', context)
+    return render(request, 'LoginPage.html', context)   # Render Login page
 
 def RegisterPage(request):
 
     if request.method == 'POST':
         if request.POST.get("FirstName") != None:
+
+            # Create new user in database
 
             FirstName = request.POST.get("FirstName")
             LastName = request.POST.get("LastName")
@@ -90,6 +91,8 @@ def QuestionsPage(request):
 
     if request.method == "POST":
 
+        # Check if answers is correct, append 10 to TotalScores
+
         if request.POST.get("Q1") == "Галактика":
             TotalScores += 10
         if request.POST.get("Q2") == "Никак":
@@ -113,7 +116,7 @@ def QuestionsPage(request):
 
         FindUser = User.objects.get(Login=login)
 
-        FindUser.TotalScores = TotalScores
+        FindUser.TotalScores = TotalScores      # Add TotalScores value to user table in database
         FindUser.save()
 
         return redirect(ResultPage)
@@ -121,7 +124,7 @@ def QuestionsPage(request):
     else:
         return render(request, "QuestionsPage.html", context)
 
-def ResultPage(request):
+def ResultPage(request):        # Render results
     context["login"] = login
     context["TotalScores"] = TotalScores
 
